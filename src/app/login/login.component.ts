@@ -21,13 +21,11 @@ export class LoginComponent {
 
   getControlName(controlName:string){
     const control = this.loginForm.controls[controlName]
-    console.log(control.invalid && control.touched)
     return control.invalid && control.touched;
   }
 
   
   login(){
-    console.log('giriş yapıldı.')
     this.router.navigate(['/home'])
   }
 

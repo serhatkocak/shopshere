@@ -1,5 +1,5 @@
-<div class="container mt-5">
-        <div class="card mx-auto" style="max-width: 400px;">
+<div class="container mt-5 vh-100">
+        <div class="card mx-auto" style="max-width: 400px; background-color: #2c2c2c; color:white;">
             <div class="card-body">
                 <h3 class="text-center">Login</h3>
                 <div [formGroup]="loginForm">
@@ -21,6 +21,8 @@
                         </div>
                         <a href="#" class="text-decoration-none">Forgot password</a>
                     </div>
+                    <p class="text-center mt-3">Not a member? <a routerLink="/register" class="text-decoration-none">Register</a></p>
+
                     <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid" (click)="login()">Sign in</button>
                 </div>
             </div>

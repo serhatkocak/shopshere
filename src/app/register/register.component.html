@@ -1,1 +1,32 @@
-<p>register works!</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4" style="width: 400px; background-color: #2c2c2c; color:white;">    
+        <h3 class="text-center mb-4">Hesap Oluştur</h3>
+        <div [formGroup]="registerForm">
+
+            <div class="mb-3">
+                <label for="name">Ad</label>
+                <input type="text" formControlName="name" class="form-control" placeholder="Adınızı Giriniz" [ngClass]="{'invalid': getControlName('name')}">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" formControlName="email" class="form-control" placeholder="Email Giriniz" [ngClass]="{'invalid': getControlName('email')}">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" placeholder="Şifre Giriniz" formControlName="password" [ngClass]="{'invalid': getControlName('password')}">
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Tekrar Şifre Giriniz</label>
+                <input type="password" formControlName="confirmpassword" class="form-control" placeholder="Tekrar Şifre Giriniz" [ngClass]="{'invalid': getControlName('confirmpassword')}">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid" (click)="register()">Hesap Oluştur</button>
+        </div>
+        <div class="text-center mt-3">
+            <p>Hesabın varsa <a routerLink="/login" class="text-info">Giriş yap</a></p>
+        </div>
+    </div>
+</div>
