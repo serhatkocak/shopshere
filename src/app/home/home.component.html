@@ -1,32 +1,52 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-      <a class="navbar-brand fw-bold text-primary"><i class="bi bi-cart3"></i>Shopshere</a>
-  
-      <form class="d-flex mx-auto">
-        <input class="form-control me-2" type="search" placeholder="Arama Yap" aria-label="Search"/>
-        <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i> </button>
-      </form>
-  
-      <div class="d-flex align-items-center">
-        <a href="#" class="btn btn-light position-relative me-2">
-          <i class="bi bi-cart"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            1
-          </span>
-        </a>
-  
-        <a href="#" class="btn btn-light position-relative me-2">
-          <i class="bi bi-bell"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            4
-          </span>
-        </a>
-  
-        <a href="#" class="btn btn-light me-2">
-          <i class="bi bi-person-circle"></i>
-        </a>
+    <a class="navbar-brand fw-bold text-primary"><i class="bi bi-cart3"></i>Shopshere</a>
+
+    <form class="d-flex mx-auto">
+      <input class="form-control me-2" type="search" placeholder="Arama Yap" aria-label="Search" />
+      <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i> </button>
+    </form>
+
+    <div class="d-flex align-items-center">
+      <a href="#" class="btn btn-light position-relative me-2">
+        <i class="bi bi-cart"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          1
+        </span>
+      </a>
+
+      <a href="javascript:void(0)" class="btn btn-light position-relative me-2" (click)="openModal(notificationModal)">
+        <i class="bi bi-bell"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          4
+        </span>
+      </a>
+
+    
+      <a  class="btn btn-light position-relative me-2" >
+        <i class="bi bi-person-fill"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          2
+        </span>
+      </a>
+
+      <ng-template #notificationModal let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title">Bildirimler</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li *ngFor="let notification of notifications">{{ notification }}</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="modal.close()">Kapat</button>
+        </div>
+      </ng-template>
+      <div>
       </div>
     </div>
-
-  </nav>
+  </div>
+</nav>
