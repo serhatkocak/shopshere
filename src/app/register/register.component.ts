@@ -11,24 +11,30 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router){
+  constructor(private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmpassword: new FormControl('', [Validators.required,])
-    });
-    
+      confirmpassword: new FormControl('', [Validators.required, Validators.minLength(6)])
+    }, { Validators: this.passwordMatchValidator });
+
+  }
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password')?.value;
+    const confirmpassword = form.get('confirmpassword')?.value;
+    return password === confirmpassword ? null : { passwordMismatch: true };
   }
 
-  getControlName(controlName:string){
+  getControlName(controlName: string) {
     const control = this.registerForm.controls[controlName]
-    console.log(control.invalid && control.touched);
     return control.invalid && control.touched;
   }
 
 
-  register(){
+  register() {
     this.router.navigate(['/home'])
   }
+
+
 }
