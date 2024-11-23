@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsModalComponent } from './shared/modals/notifications-modal/notifications-modal.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
 
 
 
@@ -18,7 +19,8 @@ import { NotificationsModalComponent } from './shared/modals/notifications-modal
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    NotificationsModalComponent
+    NotificationsModalComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

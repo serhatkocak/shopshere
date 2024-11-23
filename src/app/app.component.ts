@@ -1,6 +1,7 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsModalComponent } from './shared/modals/notifications-modal/notifications-modal.component';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
 
   public activeNavName = 'Ana Sayfa'
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private router: Router) {
 
   }
 
@@ -31,5 +32,9 @@ export class AppComponent {
   public changeNav(navName: string) {
     this.activeNavName = navName
     console.log(this.activeNavName)
+  }
+
+  inAuth() {
+    return this.router.url !== '/login' && this.router.url !== '/register'
   }
 }

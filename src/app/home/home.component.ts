@@ -6,4 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  sliderContent = [
+    {
+      sliderImage: 'vileda-adem.png',
+      sliderHead: '',
+      sliderContent: ''
+    },
+    {
+      sliderImage: 'seyyar-koftecim.png',
+      sliderHead: '',
+      sliderContent: ''
+    },
+    {
+      sliderImage: 'vileda-adem.png',
+      sliderHead: '',
+      sliderContent: ''
+    },
+
+  ]
 }
