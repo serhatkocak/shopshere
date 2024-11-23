@@ -1,3 +1,4 @@
+import { NotificationsModalComponent } from './../shared/modals/notifications-modal/notifications-modal.component';
 
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -9,18 +10,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomeComponent {
 
-  notifications: string[] = [
-    'Yeni ürün eklendi!',
-    'Sepetinize bir indirim kodu yüklendi.',
-    'Son siparişiniz kargoya verildi.',
-    'Bugün bir fırsat daha yakaladınız!'
-  ]
+ 
 modal: any;
   
   constructor(private modalService: NgbModal){}
 
-  openModal(content: any) {
-    this.modalService.open(content, { size: 'lg', centered: true });
+  openModal() {
+    this.modalService.open(NotificationsModalComponent)
   }
  
 }
