@@ -9,17 +9,17 @@ export class HomeComponent {
 
   sliderContent = [
     {
-      sliderImage: 'vileda-adem.png',
+      sliderImage: 'icardi-pose.jpeg',
       sliderHead: '',
       sliderContent: ''
     },
     {
-      sliderImage: 'seyyar-koftecim.png',
+      sliderImage: 'icardi-pose.jpeg',
       sliderHead: '',
       sliderContent: ''
     },
     {
-      sliderImage: 'vileda-adem.png',
+      sliderImage: 'icardi-pose.jpeg',
       sliderHead: '',
       sliderContent: ''
     },

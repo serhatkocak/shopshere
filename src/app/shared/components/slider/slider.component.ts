@@ -12,7 +12,4 @@ export class SliderComponent {
   constructor() {
   }
 
-  ngOnInit() {
-    console.log(this.sliderContent)
-  }
 }
