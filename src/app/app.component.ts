@@ -37,4 +37,8 @@ export class AppComponent {
   inAuth() {
     return this.router.url !== '/login' && this.router.url !== '/register'
   }
+
+  cart(){
+    this.router.navigate(['/cart-page'])
+  }
 }

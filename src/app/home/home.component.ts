@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
@@ -7,22 +10,54 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  sliderContent = [
-    {
-      sliderImage: 'icardi-pose.jpeg',
-      sliderHead: '',
-      sliderContent: ''
-    },
-    {
-      sliderImage: 'icardi-pose.jpeg',
-      sliderHead: '',
-      sliderContent: ''
-    },
-    {
-      sliderImage: 'icardi-pose.jpeg',
-      sliderHead: '',
-      sliderContent: ''
-    },
+  private apiUrl = 'http://localhost:3000/data';
+
+  constructor(private router:Router, private http:HttpClient){
+    http.get(this.apiUrl).subscribe(sliderContent => {
+      this.sliderContent = sliderContent
+      console.log(sliderContent)
+    })
+  }
+
+
+  sliderContent:any = [
 
   ]
+
+  productList = [
+    {
+      productImage: 'vileda-adem.png',
+      productTitle: 'viledaAdem',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+    {
+      productImage: 'vileda-adem.png',
+      productTitle: 'viledaAdem',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+    {
+      productImage: 'icardi-pose.jpeg',
+      productTitle: 'icardi',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+    {
+      productImage: 'icardi-pose.jpeg',
+      productTitle: 'icardi',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+    {
+      productImage: 'icardi-pose.jpeg',
+      productTitle: 'icardi',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+    {
+      productImage: 'icardi-pose.jpeg',
+      productTitle: 'icardi',
+      productContent: '51.99tl ye düşmüştür bla bla bla'
+    },
+  ]
+
+  addToCart(product:any){
+    console.log(product)
+  }
 }

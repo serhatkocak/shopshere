@@ -10,7 +10,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsModalComponent } from './shared/modals/notifications-modal/notifications-modal.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
-
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,15 +21,17 @@ import { SliderComponent } from './shared/components/slider/slider.component';
     HomeComponent,
     RegisterComponent,
     NotificationsModalComponent,
-    SliderComponent
+    SliderComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule, 
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
