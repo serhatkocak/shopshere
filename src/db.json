@@ -1,19 +1,48 @@
 {
-    "data":[
-        {
-            "sliderImage": "icardi-pose.jpeg",
-            "sliderHead": "",
-            "sliderContent": ""
-          },
-          {
-            "sliderImage": "icardi-pose.jpeg",
-            "sliderHead": "",
-            "sliderContent": ""
-          },
-          {
-            "sliderImage": "icardi-pose.jpeg",
-            "sliderHead": "",
-            "sliderContent":""
-          }
-    ]
+  "product-list": [
+    {
+      "productImage": "vileda-adem.png",
+      "productTitle": "viledaAdem",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "productImage": "vileda-adem.png",
+      "productTitle": "viledaAdem",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "productImage": "icardi-pose.jpeg",
+      "productTitle": "icardi",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "productImage": "icardi-pose.jpeg",
+      "productTitle": "icardi",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "productImage": "icardi-pose.jpeg",
+      "productTitle": "icardi",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "productImage": "icardi-pose.jpeg",
+      "productTitle": "icardi",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    }
+  ],
+  "cart": [
+    {
+      "id": "9b36",
+      "productImage": "vileda-adem.png",
+      "productTitle": "viledaAdem",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    },
+    {
+      "id": "a2c3",
+      "productImage": "vileda-adem.png",
+      "productTitle": "viledaAdem",
+      "productContent": "51.99tl ye düşmüştür bla bla bla"
+    }
+  ]
 }

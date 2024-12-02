@@ -2,7 +2,7 @@
     <app-slider [sliderContent]="sliderContent"></app-slider>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="productList">
     <div class="card d-inline-block mx-2" style="width: 18rem;" *ngFor="let product of productList">
         <img class="card-img-top" src="../../assets/slide-images/{{product.productImage}}" alt="Card image cap">
         <div class="card-body">
@@ -11,4 +11,5 @@
           <button class="btn btn-primary" (click)="addToCart(product)">Sepete Ekle</button>
         </div>
       </div>
+
 </div>

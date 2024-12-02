@@ -1,1 +1,8 @@
-<p>cart-page works!</p>
+<div class="card d-inline-block mx-2" style="width: 18rem;" *ngFor="let product of cartList">
+    <img class="card-img-top" src="../../assets/slide-images/{{product.productImage}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{product.productTitle}}</h5>
+        <p class="card-text">{{product.productContent}}</p>
+        <button class="btn btn-danger" (click)="removeFromCart(product)">Sepetten Kaldır</button>
+    </div>
+</div>

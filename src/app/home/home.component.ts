@@ -1,63 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { IProduct } from "../shared/models/product.model";
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:3000/data';
+    private apiUrl = 'http://localhost:3000/';
+    sliderContent: any = [
+        {
+            sliderImage: "icardi-pose.jpeg",
+            sliderHead: "",
+            sliderContent: ""
+        },
+        {
+            sliderImage: "icardi-pose.jpeg",
+            sliderHead: "",
+            sliderContent: ""
+        },
+        {
+            sliderImage: "icardi-pose.jpeg",
+            sliderHead: "",
+            sliderContent: ""
+        }
+    ]
 
-  constructor(private router:Router, private http:HttpClient){
-    http.get(this.apiUrl).subscribe(sliderContent => {
-      this.sliderContent = sliderContent
-      console.log(sliderContent)
-    })
-  }
+    productList: IProduct[] = []
 
+    constructor(private router: Router, private http: HttpClient) {
+    }
 
-  sliderContent:any = [
+    ngOnInit() {
+        this.http.get<IProduct[]>(`${this.apiUrl}product-list`).subscribe((productList: IProduct[]) => {
+            this.productList = productList;
+        })
+    }
 
-  ]
-
-  productList = [
-    {
-      productImage: 'vileda-adem.png',
-      productTitle: 'viledaAdem',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-    {
-      productImage: 'vileda-adem.png',
-      productTitle: 'viledaAdem',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-    {
-      productImage: 'icardi-pose.jpeg',
-      productTitle: 'icardi',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-    {
-      productImage: 'icardi-pose.jpeg',
-      productTitle: 'icardi',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-    {
-      productImage: 'icardi-pose.jpeg',
-      productTitle: 'icardi',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-    {
-      productImage: 'icardi-pose.jpeg',
-      productTitle: 'icardi',
-      productContent: '51.99tl ye düşmüştür bla bla bla'
-    },
-  ]
-
-  addToCart(product:any){
-    console.log(product)
-  }
+    addToCart(product: IProduct) {
+        this.http.post(`${this.apiUrl}cart`, product).subscribe();
+    }
 }
