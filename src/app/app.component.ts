@@ -1,3 +1,4 @@
+import { RegisterComponent } from './auth/register/register.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsModalComponent } from './shared/modals/notifications-modal/notifications-modal.component';
 import { Component } from '@angular/core';
@@ -40,5 +41,9 @@ export class AppComponent {
 
   cart(){
     this.router.navigate(['/cart-page'])
+  }
+
+  register(){
+    this.router.navigate(['/register'])
   }
 }
