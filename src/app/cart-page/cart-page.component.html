@@ -1,48 +1,57 @@
 <div class="container my-4">
-    <h2 class="mb-4">Sepetim</h2>
-    
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="cart-item d-flex align-items-center">
-          <input type="checkbox" class="form-check-input me-3">
-          <img class="me-3">
-          <div class="flex-grow-1">
+  <h2 class="mb-4">Sepetim</h2>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="card mb-3"  *ngFor="let product of cartList">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../../assets/product-images/{{product.productImage}}" class="img-fluid rounded-start" alt="...">
           </div>
-          <div class="d-flex align-items-center">
-            <button class="btn btn-outline-secondary btn-sm" >-</button>
-            <input type="number"  class="form-control mx-2" style="width: 60px;">
-            <button class="btn btn-outline-secondary btn-sm" >+</button>
+          <div class="col-md-8">
+            <div class="card-body mt-2">
+              <h5 class="card-title">{{product.productTitle}}</h5>
+              <p class="card-text">{{product.productContent}}</p>
+              <p class="card-text"><small class="text-body-secondary">{{product.price}} ₺</small></p>
+              <button class="btn btn-danger" (click)="removeFromCart(product)">
+                <i class="bi bi-trash"></i>
+              </button>
+                <div class="d-flex align-items-center float-end">
+                  <button class="btn btn-outline-secondary btn-sm">-</button>
+                    <input type="number" class="form-control mx-2" style="width: 60px;">
+                  <button class="btn btn-outline-secondary btn-sm">+</button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="col-lg-4">
-        <div class="summary-card">
-          <h5>Sipariş Özeti</h5>
-          <div class="d-flex justify-content-between">
-            <span>Ürünün Toplamı</span>
-          </div>
-          <div class="d-flex justify-content-between">
-            <span>Kargo Toplamı</span>
-          </div>
-          <div class="d-flex justify-content-between text-success">
-            <span>Kargo Bedava (200 TL ve üzeri)</span>
-          </div>
-          <hr>
-          <div class="d-flex justify-content-between">
-            <strong>Toplam</strong>
-          </div>
-          <button class="btn btn-warning w-100 mt-3">Sepeti Onayla</button>
+    </div>
+    <div class="col-2">
+      <div class="cart-item d-flex align-items-center">
+        <img class="me-3">
+        <div class="flex-grow-1">
         </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="summary-card">
+        <h5>Sipariş Özeti</h5>
+        <div class="d-flex justify-content-between">
+          <span>Ürünün Toplamı</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Kargo Toplamı</span>
+        </div>
+        <div class="d-flex justify-content-between text-success">
+          <span>Kargo Bedava (200 TL ve üzeri)</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <strong>Toplam</strong>
+        </div>
+        <button class="btn btn-warning w-100 mt-3">Sepeti Onayla</button>
       </div>
     </div>
   </div>
-
-<div class="card d-inline-block mx-2" style="width: 18rem;" *ngFor="let product of cartList">
-    <img class="card-img-top" src="../../assets/slide-images/{{product.productImage}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{product.productTitle}}</h5>
-        <p class="card-text">{{product.productContent}}</p>
-        <button class="btn btn-danger" (click)="removeFromCart(product)">Sepetten Kaldır</button>
-    </div>
 </div>

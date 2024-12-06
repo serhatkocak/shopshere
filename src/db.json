@@ -3,46 +3,54 @@
     {
       "productImage": "smartwach.png",
       "productTitle": "viledaAdem",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
       "productImage": "vileda-adem.png",
       "productTitle": "viledaAdem",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
       "productImage": "icardi-pose.jpeg",
       "productTitle": "icardi",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
       "productImage": "icardi-pose.jpeg",
       "productTitle": "icardi",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
       "productImage": "icardi-pose.jpeg",
       "productTitle": "icardi",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
       "productImage": "icardi-pose.jpeg",
       "productTitle": "icardi",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     }
   ],
   "cart": [
     {
-      "id": "9b36",
-      "productImage": "vileda-adem.png",
+      "id": "1209",
+      "productImage": "smartwach.png",
       "productTitle": "viledaAdem",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     },
     {
-      "id": "a2c3",
-      "productImage": "vileda-adem.png",
+      "id": "81c3",
+      "productImage": "smartwach.png",
       "productTitle": "viledaAdem",
-      "productContent": "51.99tl ye düşmüştür bla bla bla"
+      "productContent": "51.99tl ye düşmüştür bla bla bla",
+      "price": "50"
     }
   ]
 }

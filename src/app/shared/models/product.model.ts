@@ -3,4 +3,5 @@ export interface IProduct {
     productImage?: string;
     productTitle?: string;
     productContent?: string;
+    price?: string;
 }

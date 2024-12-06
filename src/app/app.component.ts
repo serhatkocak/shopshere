@@ -31,8 +31,17 @@ export class AppComponent {
   }
 
   public changeNav(navName: string) {
+    let url: string
+    switch(navName) {
+      case 'Ana Sayfa':
+      url = 'home'
+      break;
+      default:
+      url = 'home'
+      break;
+    }
+    this.router.navigateByUrl('url')
     this.activeNavName = navName
-    console.log(this.activeNavName)
   }
 
   inAuth() {
