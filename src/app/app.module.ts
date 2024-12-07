@@ -12,6 +12,10 @@ import { NotificationsModalComponent } from './shared/modals/notifications-modal
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -22,16 +26,21 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     NotificationsModalComponent,
     SliderComponent,
-    CartPageComponent
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule, 
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [HttpClient],
+  providers: [HttpClient,  ],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

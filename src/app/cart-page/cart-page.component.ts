@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { IProduct } from "../shared/models/product.model";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-cart-page',
@@ -12,7 +13,7 @@ export class CartPageComponent implements OnInit{
 
     cartList: IProduct[] = [];
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private toastr: ToastrService) {}
 
     ngOnInit() {
         this.getProductList()
@@ -26,7 +27,7 @@ export class CartPageComponent implements OnInit{
 
     removeFromCart(product: IProduct) {
         this.http.delete(`${this.apiUrl}cart/${product.id}`).subscribe(_ => {
-            console.log('silindi')
+            this.toastr.error('Ürün Silindi');
             this.getProductList()
         })
     }
