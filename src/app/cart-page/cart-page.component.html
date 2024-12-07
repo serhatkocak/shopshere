@@ -44,7 +44,7 @@
           <h5 class="card-title">{{product.productTitle}}</h5>
           <p class="card-text small text-muted">{{product.productContent | truncate:30}}</p>
           <p class="card-text"><small class="text-body-secondary">{{product.price}} ₺</small></p>
-          <button class="btn btn-danger" (click)="removeFromCart(product)">
+          <button class="btn btn-danger" (click)="removeFromCart(product.id)">
             <i class="bi bi-trash"></i>
           </button>
           <div class="d-flex align-items-center float-end">

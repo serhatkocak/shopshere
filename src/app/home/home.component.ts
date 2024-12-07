@@ -1,8 +1,8 @@
+import { JsonServerService } from './../shared/service/json-server.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { IProduct } from "../shared/models/product.model";
 import { ISlider } from '../shared/models/slider.model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,28 +11,21 @@ import { ISlider } from '../shared/models/slider.model';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    public sliderList: ISlider[] = []
+    public productList: IProduct[] = []
 
-    private apiUrl = 'http://localhost:3000/';
-
-
-    sliderList: ISlider[] =[]
-
-    productList: IProduct[] = []
-
-    constructor(private router: Router, private http: HttpClient) {
+    constructor(private jsonServerService: JsonServerService, private toastrService: ToastrService) {
     }
 
     ngOnInit() {
-        this.http.get<IProduct[]>(`${this.apiUrl}product-list`).subscribe((productList: IProduct[]) => {
-            this.productList = productList;
-        })
-
-        this.http.get<ISlider[]>(`${this.apiUrl}slider-image`).subscribe((sliderList: ISlider[]) =>{
+        this.jsonServerService.getProductList().subscribe((sliderList: ISlider[]) => {
             this.sliderList = sliderList;
         })
     }
 
     addToCart(product: IProduct) {
-        this.http.post(`${this.apiUrl}cart`, product).subscribe();
+        this.jsonServerService.addToCart(product).subscribe(_ => {
+            this.toastrService.success('Ekleme Bşarılı', 'Ürününüz Sepete Eklendi!')
+        })
     }
 }

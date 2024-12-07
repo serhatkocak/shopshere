@@ -1,5 +1,5 @@
+import { JsonServerService } from './../shared/service/json-server.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { IProduct } from "../shared/models/product.model";
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,24 +9,22 @@ import { ToastrService } from 'ngx-toastr';
     styleUrls: ['./cart-page.component.scss']
 })
 export class CartPageComponent implements OnInit{
-    private apiUrl = 'http://localhost:3000/';
+    public cartList: IProduct[] = [];
 
-    cartList: IProduct[] = [];
-
-    constructor(private http: HttpClient, private toastr: ToastrService) {}
+    constructor(private JsonServerService: JsonServerService, private toastr: ToastrService) {}
 
     ngOnInit() {
         this.getProductList()
     }
 
     private getProductList() {
-        this.http.get<IProduct[]>(`${this.apiUrl}cart`).subscribe((cartList: IProduct[]) => {
+        this.JsonServerService.getCartList().subscribe((cartList: IProduct[]) => {
             this.cartList = cartList;
         })
     }
 
-    removeFromCart(product: IProduct) {
-        this.http.delete(`${this.apiUrl}cart/${product.id}`).subscribe(_ => {
+    removeFromCart(productId: string | undefined) {
+        this.JsonServerService.removeFromCart(productId).subscribe(_ => {
             this.toastr.error('Ürün Silindi');
             this.getProductList()
         })
