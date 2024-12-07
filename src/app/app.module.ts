@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 
 
@@ -27,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     NotificationsModalComponent,
     SliderComponent,
     CartPageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
