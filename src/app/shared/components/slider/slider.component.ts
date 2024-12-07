@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ISlider } from '../../models/slider.model';
 
 @Component({
   selector: 'app-slider',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SliderComponent {
 
-  @Input() sliderContent: any
+  @Input() sliderList: ISlider[] = []
 
   constructor() {
   }

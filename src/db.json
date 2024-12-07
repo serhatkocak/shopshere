@@ -1,4 +1,22 @@
 {
+  "slider-image":[
+    {
+      "sliderImage": "discount.png",
+      "sliderHead": "",
+      "sliderContent": ""
+  },
+  {
+      "sliderImage": "icardi-pose.jpeg",
+      "sliderHead": "",
+      "sliderContent": ""
+  },
+  {
+      "sliderImage": "icardi-pose.jpeg",
+      "sliderHead": "",
+      "sliderContent": ""
+  }
+  ],
+
   "product-list": [
     {
       "productImage": "smartwach.png",

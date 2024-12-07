@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from "../shared/models/product.model";
+import { ISlider } from '../shared/models/slider.model';
 
 
 @Component({
@@ -12,23 +13,9 @@ import { IProduct } from "../shared/models/product.model";
 export class HomeComponent implements OnInit {
 
     private apiUrl = 'http://localhost:3000/';
-    sliderContent: any = [
-        {
-            sliderImage: "icardi-pose.jpeg",
-            sliderHead: "",
-            sliderContent: ""
-        },
-        {
-            sliderImage: "icardi-pose.jpeg",
-            sliderHead: "",
-            sliderContent: ""
-        },
-        {
-            sliderImage: "icardi-pose.jpeg",
-            sliderHead: "",
-            sliderContent: ""
-        }
-    ]
+
+
+    sliderList: ISlider[] =[]
 
     productList: IProduct[] = []
 
@@ -38,6 +25,10 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.http.get<IProduct[]>(`${this.apiUrl}product-list`).subscribe((productList: IProduct[]) => {
             this.productList = productList;
+        })
+
+        this.http.get<ISlider[]>(`${this.apiUrl}slider-image`).subscribe((sliderList: ISlider[]) =>{
+            this.sliderList = sliderList;
         })
     }
 
