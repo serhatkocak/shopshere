@@ -1,5 +1,5 @@
 {
-  "slider-image":[
+  "slider-image": [
     {
       "sliderImage": "discount.png",
       "sliderHead": "",
@@ -12,7 +12,6 @@
   }
 
   ],
-
   "product-list": [
     {
       "productImage": "smartwach.png",

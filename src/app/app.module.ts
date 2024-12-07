@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { TruncatePipe } from './shared/pipes/truntcate.pipe';
 
 
 
@@ -29,19 +30,21 @@ import { HeaderComponent } from './shared/components/header/header.component';
     SliderComponent,
     CartPageComponent,
     HeaderComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [HttpClient,  ],
-  bootstrap: [AppComponent]
+  providers: [HttpClient],
+  bootstrap: [AppComponent],
+  exports: [TruncatePipe]
 })
 
 

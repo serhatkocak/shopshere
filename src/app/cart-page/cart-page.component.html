@@ -1,36 +1,13 @@
+<app-header></app-header>
+
+
 <div class="container my-4">
   <h2 class="mb-4">Sepetim</h2>
 
   <div class="row">
-    <div class="col-6">
-      <div class="card mb-3"  *ngFor="let product of cartList">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="../../assets/product-images/{{product.productImage}}" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body mt-2">
-              <h5 class="card-title">{{product.productTitle}}</h5>
-              <p class="card-text">{{product.productContent}}</p>
-              <p class="card-text"><small class="text-body-secondary">{{product.price}} ₺</small></p>
-              <button class="btn btn-danger" (click)="removeFromCart(product)">
-                <i class="bi bi-trash"></i>
-              </button>
-                <div class="d-flex align-items-center float-end">
-                  <button class="btn btn-outline-secondary btn-sm">-</button>
-                    <input type="number" class="form-control mx-2" style="width: 60px;">
-                  <button class="btn btn-outline-secondary btn-sm">+</button>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="cart-item d-flex align-items-center">
-        <img class="me-3">
-        <div class="flex-grow-1">
-        </div>
+    <div class="col-8">
+      <div class="d-flex justify-content-center align-items-center h-100" *ngIf="cartList.length === 0; else CartList">
+        <div class="text-muted">Sepette Ürün Bulunamadı</div>
       </div>
     </div>
 
@@ -55,3 +32,29 @@
     </div>
   </div>
 </div>
+
+<ng-template #CartList>
+  <div class="card mb-3" *ngFor="let product of cartList">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../../assets/product-images/{{product.productImage}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body mt-2">
+          <h5 class="card-title">{{product.productTitle}}</h5>
+          <p class="card-text small text-muted">{{product.productContent | truncate:30}}</p>
+          <p class="card-text"><small class="text-body-secondary">{{product.price}} ₺</small></p>
+          <button class="btn btn-danger" (click)="removeFromCart(product)">
+            <i class="bi bi-trash"></i>
+          </button>
+          <div class="d-flex align-items-center float-end">
+            <button class="btn btn-outline-secondary btn-sm">-</button>
+            <input type="number" class="form-control mx-2" style="width: 60px;">
+            <button class="btn btn-outline-secondary btn-sm">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>
