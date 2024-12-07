@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.jsonServerService.getProductList().subscribe((sliderList: ISlider[]) => {
-            this.sliderList = sliderList;
+            this.productList = sliderList;
+        })
+        this.jsonServerService.getSlideList().subscribe(slideList => {
+            this.sliderList = slideList
         })
     }
 

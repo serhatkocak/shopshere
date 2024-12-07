@@ -1,16 +1,15 @@
 {
-  "slider-image": [
+  "slider-list": [
     {
       "sliderImage": "discount.png",
       "sliderHead": "",
       "sliderContent": ""
-  },
-  {
+    },
+    {
       "sliderImage": "campaign.png",
       "sliderHead": "",
       "sliderContent": ""
-  }
-
+    }
   ],
   "product-list": [
     {

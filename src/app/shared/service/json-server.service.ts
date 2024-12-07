@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { IProduct } from "../models/product.model";
+import { ISlider } from "../models/slider.model";
 
 @Injectable({
     providedIn: "root"
@@ -19,6 +20,10 @@ export class JsonServerService {
 
     public getCartList(): Observable<IProduct[]> {
         return this.http.get<IProduct[]>(`${this.apiUrl}cart`)
+    }
+
+    public getSlideList(): Observable<ISlider[]> {
+        return this.http.get<ISlider[]>(`${this.apiUrl}slider-list`)
     }
 
     public addToCart(product: IProduct) {
