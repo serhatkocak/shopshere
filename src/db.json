@@ -3,12 +3,14 @@
     {
       "sliderImage": "discount.png",
       "sliderHead": "",
-      "sliderContent": ""
+      "sliderContent": "",
+      "id": "f415"
     },
     {
       "sliderImage": "campaign.png",
       "sliderHead": "",
-      "sliderContent": ""
+      "sliderContent": "",
+      "id": "db82"
     }
   ],
   "product-list": [
@@ -20,8 +22,8 @@
       "id": "4d53"
     },
     {
-      "productImage": "vileda-adem.png",
-      "productTitle": "viledaAdem",
+      "productImage": "balık.png",
+      "productTitle": "bALIK",
       "productContent": "51.99tl ye düşmüştür bla bla bla",
       "price": "50",
       "id": "59cd"
